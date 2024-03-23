@@ -34,8 +34,19 @@ numberOfGroupInput.classList.add("numberOfGroupInput");
 numberOfGroupInput.setAttribute("type", "number");
 enterNumberBody.appendChild(numberOfGroupInput);
 
+const capacityBody = document.createElement("div");
+capacityBody.classList.add("capacityBody");
+root.appendChild(capacityBody)
 
+const capacityHeading = document.createElement('p');
+capacityHeading.classList.add("capacityHeading")
+capacityHeading.textContent="Enter capacity"
+capacityBody.appendChild(capacityHeading)
 
+const capacityInput = document.createElement("input");
+capacityInput.classList.add("capacityInput");
+capacityInput.setAttribute("type","number")
+capacityBody.appendChild(capacityInput)
 
 
 
@@ -71,6 +82,6 @@ continueButton_1.addEventListener("click", () => {
   }
   else{
     numberOfGroups=Number(numberOfGroupInput.value);
-    console.log(numberOfGroups);
+    console.log(`number of groups = ${numberOfGroups}`);
   }
 });
