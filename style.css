@@ -24,14 +24,20 @@ body{
   height: 60px;
   width: 300px;
   background-color: red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .numberOfGroupTotalHeading{
-
+ 
 }
 
 .numberOfGroupInput{
-
+height: 20px;
+width: 80%;
+text-align: center;
 }
 
 .msgLabelBody{

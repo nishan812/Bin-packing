@@ -16,6 +16,10 @@ function alertMessage(msg) {
   }
 }
 
+
+
+
+
 const enterNumberBody = document.createElement("div");
 enterNumberBody.classList.add("enterNumberBody");
 root.appendChild(enterNumberBody);
@@ -30,16 +34,43 @@ numberOfGroupInput.classList.add("numberOfGroupInput");
 numberOfGroupInput.setAttribute("type", "number");
 enterNumberBody.appendChild(numberOfGroupInput);
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const continueButton_1 = document.createElement("button");
 continueButton_1.classList.add("continueButton_1");
 continueButton_1.textContent = "continue";
 body.appendChild(continueButton_1);
+
+let numberOfGroups;
+let capacity;
+let lowerBound;
+let groups=[];
 
 continueButton_1.addEventListener("click", () => {
   if (numberOfGroupInput.value.trim() == ""|| (numberOfGroupInput.value.trim()<=0) ){
     alertMessage("Number of Groups is Empty or Invalid");
   }
   else{
-    console.log(numberOfGroupInput.value);
+    numberOfGroups=Number(numberOfGroupInput.value);
+    console.log(numberOfGroups);
   }
 });
