@@ -2,10 +2,16 @@ const root = document.querySelector(".root");
 const body = document.querySelector('body');
 
 function alertMessage(msg){
+    root.style.margin="0"
     const msgLabelBody= document.createElement("div");
     msgLabelBody.classList.add("msgLabelBody");
     msgLabelBody.textContent=msg
     body.insertBefore(msgLabelBody,root)
+
+    setTimeout(() => {
+        msgLabelBody.remove()
+        root.style.marginTop="10%"
+    }, 3000);
 
 }
 
@@ -36,5 +42,7 @@ continueButton_1.textContent="continue";
 body.appendChild(continueButton_1)
 
 continueButton_1.addEventListener("click",()=>{
-   alertMessage("test")
+   if(body.children[0].classList!="msgLabelBody"){
+    alertMessage("pass")
+   }
 })

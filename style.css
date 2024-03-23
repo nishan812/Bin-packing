@@ -10,8 +10,9 @@ body{
     align-items: center;
 }
 .root {
+  margin-top: 10%;
   background-color: green;
-  height: 500px;
+  height: 200px;
   width: 90%;
   display: flex;
   justify-content: center;
