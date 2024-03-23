@@ -54,18 +54,6 @@ capacityBody.appendChild(capacityInput)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 const continueButton_1 = document.createElement("button");
 continueButton_1.classList.add("continueButton_1");
 continueButton_1.textContent = "continue";
@@ -80,8 +68,13 @@ continueButton_1.addEventListener("click", () => {
   if (numberOfGroupInput.value.trim() == ""|| (numberOfGroupInput.value.trim()<=0) ){
     alertMessage("Number of Groups is Empty or Invalid");
   }
+  else if(capacityInput.value.trim() == ""|| (capacityInput.value.trim()<=0)){
+    alertMessage("Capacity is Empty or Invalid")
+  }
   else{
     numberOfGroups=Number(numberOfGroupInput.value);
+    capacity=Number(capacityInput.value)
     console.log(`number of groups = ${numberOfGroups}`);
+    console.log(`capacity = ${capacity}`);
   }
 });
