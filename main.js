@@ -131,26 +131,27 @@ continueButton_1.addEventListener("click", () => {
         })
         
 
-        console.log(newStatus);
         if(newStatus.some(data=>data==false)){
             alertMessage("Invalid Data Found")
         }
         else{
-            console.log("pass");
+            //Here geos all logics for bin packing
+            
+            const groupValues=[];
+            groupInputs.forEach(value=>{
+                groupValues.push(Number(value.value))
+            })
+            let total = 0;
+            groupValues.forEach(num=>{
+                total+=num
+            })
+
+            lowerBound=Math.ceil(total/capacity)
+            console.log(lowerBound);
+
+
+
         }
-
-        // const groupValues = [];
-
-
-        // groupInputs.forEach((item) => {
-        //   groupValues.push(Number(item.value));
-        // });
-        // console.log(groupValues);
-
-
-
-
-
       }
     });
   }
