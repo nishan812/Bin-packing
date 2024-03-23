@@ -96,6 +96,14 @@ continueButton_1.addEventListener("click", () => {
       groupBody.appendChild(groupInput);
     }
 
+
+
+
+
+
+
+
+    // here goes main
     continueButton_2.addEventListener("click", () => {
       const groupInputs = document.querySelectorAll(".groupInput");
       let groupInputStatus = [];
@@ -107,16 +115,42 @@ continueButton_1.addEventListener("click", () => {
       if (groupInputStatus.some((data) => data === false)) {
         alertMessage("Some Group values are empty!");
       } else {
-        const groupValues = [];
+        const temp_vals = [];
         groupInputs.forEach((item) => {
-          groupValues.push(Number(item.value));
-        });
-        console.log(groupValues);
+            temp_vals.push(Number(item.value));
+          });
 
-
-
-
+        const newStatus =[]
+        temp_vals.forEach((item)=>{
+            if(item<=0){
+                newStatus.push(false)
+            }
+            else(
+                newStatus.push(true)
+            )
+        })
         
+
+        console.log(newStatus);
+        if(newStatus.some(data=>data==false)){
+            alertMessage("Invalid Data Found")
+        }
+        else{
+            console.log("pass");
+        }
+
+        // const groupValues = [];
+
+
+        // groupInputs.forEach((item) => {
+        //   groupValues.push(Number(item.value));
+        // });
+        // console.log(groupValues);
+
+
+
+
+
       }
     });
   }
