@@ -12,12 +12,11 @@ body {
 .root {
   margin-top: 10%;
   background-color: green;
-  height: 200px;
-  width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10%;
+  gap: 20px;
+  flex-wrap:wrap ;
 }
 
 .enterNumberBody {
@@ -69,8 +68,18 @@ body {
   font-size: 18px;
   font-weight: bold;
 }
-.continueButton_1 {
+.continueButton_1  {
   margin-bottom: 10%;
   height: 50px;
   width: 150px;
+}
+.continueButton_2{
+  margin-bottom: 10%;
+  height: 50px;
+  width: 150px;
+}
+.groupBody{
+    background-color: red;
+    height: 60px;
+    width: 200px;
 }

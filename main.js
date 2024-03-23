@@ -61,8 +61,8 @@ body.appendChild(continueButton_1);
 
 let numberOfGroups;
 let capacity;
-let lowerBound;
 let groups=[];
+let lowerBound;
 
 continueButton_1.addEventListener("click", () => {
   if (numberOfGroupInput.value.trim() == ""|| (numberOfGroupInput.value.trim()<=0) ){
@@ -74,10 +74,35 @@ continueButton_1.addEventListener("click", () => {
   else{
     numberOfGroups=Number(numberOfGroupInput.value);
     capacity=Number(capacityInput.value)
+
     enterNumberBody.remove()
     capacityBody.remove()
     continueButton_1.remove()
+
     console.log(`number of groups = ${numberOfGroups}`);
     console.log(`capacity = ${capacity}`);
+
+  
+    const continueButton_2 = document.createElement("button");
+    continueButton_2.textContent="Submit"
+    continueButton_2.classList.add("continueButton_2");
+    body.appendChild(continueButton_2)
+
+    for(let i=1;i<=numberOfGroups;i++){
+
+        const groupBody = document.createElement("div");
+        groupBody.classList.add("groupBody");
+        root.appendChild(groupBody)
+
+        const groupBodyHeading = document.createElement("p");
+        groupBodyHeading.textContent=`Group ${i}`
+        groupBody.appendChild(groupBodyHeading)
+
+
+        console.log(i);
+    }
+
+
   }
 });
+
