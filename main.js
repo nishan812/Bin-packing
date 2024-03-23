@@ -145,8 +145,15 @@ continueButton_1.addEventListener("click", () => {
                 total+=num
             })
 
+            groupValues.sort()
+            let valuesInDescendingOrder=[];
+            for(let i=groupValues.length-1;i>=0;i--){
+                valuesInDescendingOrder.push(groupValues[i])
+            }
+            console.log(`Values in desc order = ${valuesInDescendingOrder}`);
+
             lowerBound=Math.ceil(total/capacity)
-            console.log(lowerBound);
+            console.log(`Lower Bound = ${lowerBound}`);
 
 
 
