@@ -3,7 +3,6 @@ const body = document.querySelector("body");
 
 function alertMessage(msg) {
   if (body.children[0].classList != "msgLabelBody") {
-    root.style.margin = "0";
     const msgLabelBody = document.createElement("div");
     msgLabelBody.classList.add("msgLabelBody");
     msgLabelBody.textContent = `Note: ${msg}`;
