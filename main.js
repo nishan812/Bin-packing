@@ -74,6 +74,9 @@ continueButton_1.addEventListener("click", () => {
   else{
     numberOfGroups=Number(numberOfGroupInput.value);
     capacity=Number(capacityInput.value)
+    enterNumberBody.remove()
+    capacityBody.remove()
+    continueButton_1.remove()
     console.log(`number of groups = ${numberOfGroups}`);
     console.log(`capacity = ${capacity}`);
   }
