@@ -118,10 +118,9 @@ continueButton_1.addEventListener("click", () => {
             newStatus.push(false);
           } else newStatus.push(true);
 
-
-          if(item>capacity){
-            newStatus.push(false)
-          }else newStatus.push(true)
+          if (item > capacity) {
+            newStatus.push(false);
+          } else newStatus.push(true);
         });
 
         if (newStatus.some((data) => data == false)) {
@@ -159,23 +158,26 @@ continueButton_1.addEventListener("click", () => {
           resultBody.classList.add("resultBody");
           root.appendChild(resultBody);
 
-          let bins = [];
+          const bins =[];
+          valuesInDescendingOrder.forEach((numOne,indexOne)=>{
+            valuesInDescendingOrder.forEach((numTwo,indexTwo)=>{
+              if(indexTwo!==indexOne){
+                if(numOne+numTwo<=capacity){
+                  bins.push(numOne,numTwo)
+                  
+                  //fuck off
 
-          valuesInDescendingOrder.forEach((numOne, indexOfNumOne) => {
-            valuesInDescendingOrder.forEach((numTwo, indexOfNumTwo)=>{
-
-              if(indexOfNumTwo!==indexOfNumOne){
-                console.log(numTwo);
-                
+                }
               }
-              
-            })
 
-                
-                
+            });
           });
-
           console.log(bins);
+
+
+
+         
+          
         }
       }
     });
