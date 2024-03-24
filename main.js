@@ -95,13 +95,6 @@ continueButton_1.addEventListener("click", () => {
       groupBody.appendChild(groupInput);
     }
 
-
-
-
-
-
-
-
     // here goes main
     continueButton_2.addEventListener("click", () => {
       const groupInputs = document.querySelectorAll(".groupInput");
@@ -116,59 +109,60 @@ continueButton_1.addEventListener("click", () => {
       } else {
         const temp_vals = [];
         groupInputs.forEach((item) => {
-            temp_vals.push(Number(item.value));
+          temp_vals.push(Number(item.value));
+        });
+
+        const newStatus = [];
+        temp_vals.forEach((item) => {
+          if (item <= 0) {
+            newStatus.push(false);
+          } else newStatus.push(true);
+        });
+
+        if (newStatus.some((data) => data == false)) {
+          alertMessage("Invalid Data Found");
+        } else {
+          //Here geos all logics for bin packing
+
+          const groupValues = [];
+          groupInputs.forEach((value) => {
+            groupValues.push(Number(value.value));
+          });
+          let total = 0;
+          groupValues.forEach((num) => {
+            total += num;
           });
 
-        const newStatus =[]
-        temp_vals.forEach((item)=>{
-            if(item<=0){
-                newStatus.push(false)
-            }
-            else(
-                newStatus.push(true)
-            )
-        })
-        
+          groupValues.sort();
+          let valuesInDescendingOrder = [];
+          for (let i = groupValues.length - 1; i >= 0; i--) {
+            valuesInDescendingOrder.push(groupValues[i]);
+          }
+          console.log(`Values in desc order = ${valuesInDescendingOrder}`);
 
-        if(newStatus.some(data=>data==false)){
-            alertMessage("Invalid Data Found")
-        }
-        else{
-            //Here geos all logics for bin packing
+          lowerBound = Math.ceil(total / capacity);
+          console.log(`Lower Bound = ${lowerBound}`);
+
+          // removing all child after calculating
+          while (root.firstChild) {
+            root.removeChild(root.firstChild);
+          }
+          continueButton_2.remove();
+
+          //final part
+          const resultBody = document.createElement("div");
+          resultBody.classList.add("resultBody");
+          root.appendChild(resultBody);
+
+          let bins = [];
+
+          valuesInDescendingOrder.forEach((numOne, indexOfNumOne) => {
             
-            const groupValues=[];
-            groupInputs.forEach(value=>{
-                groupValues.push(Number(value.value))
-            })
-            let total = 0;
-            groupValues.forEach(num=>{
-                total+=num
-            })
+                
+                
+          });
 
-            groupValues.sort()
-            let valuesInDescendingOrder=[];
-            for(let i=groupValues.length-1;i>=0;i--){
-                valuesInDescendingOrder.push(groupValues[i])
-            }
-            console.log(`Values in desc order = ${valuesInDescendingOrder}`);
-
-            lowerBound=Math.ceil(total/capacity)
-            console.log(`Lower Bound = ${lowerBound}`);
-
-            // removing all child after calculating
-            while (root.firstChild){
-              root.removeChild(root.firstChild)
-            }
-            continueButton_2.remove()
-
-
-
-            //final part 
-            const resultBody=document.createElement("div");
-            resultBody.classList.add("resultBody");
-            root.appendChild(resultBody)
-
-
+          console.log(bins);
         }
       }
     });
