@@ -90,3 +90,7 @@ body {
 .groupInput{
     height: 40%;
 }
+.resultBody{
+  width: 300px;
+  background-color: red;
+}

@@ -76,7 +76,7 @@ continueButton_1.addEventListener("click", () => {
     console.log(`capacity = ${capacity}`);
 
     const continueButton_2 = document.createElement("button");
-    continueButton_2.textContent = "Submit";
+    continueButton_2.textContent = "Calculate";
     continueButton_2.classList.add("continueButton_2");
     body.appendChild(continueButton_2);
 
@@ -155,6 +155,18 @@ continueButton_1.addEventListener("click", () => {
             lowerBound=Math.ceil(total/capacity)
             console.log(`Lower Bound = ${lowerBound}`);
 
+            // removing all child after calculating
+            while (root.firstChild){
+              root.removeChild(root.firstChild)
+            }
+            continueButton_2.remove()
+
+
+
+            //final part 
+            const resultBody=document.createElement("div");
+            resultBody.classList.add("resultBody");
+            root.appendChild(resultBody)
 
 
         }
