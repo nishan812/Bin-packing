@@ -117,6 +117,11 @@ continueButton_1.addEventListener("click", () => {
           if (item <= 0) {
             newStatus.push(false);
           } else newStatus.push(true);
+
+
+          if(item>capacity){
+            newStatus.push(false)
+          }else newStatus.push(true)
         });
 
         if (newStatus.some((data) => data == false)) {
@@ -157,7 +162,15 @@ continueButton_1.addEventListener("click", () => {
           let bins = [];
 
           valuesInDescendingOrder.forEach((numOne, indexOfNumOne) => {
-            
+            valuesInDescendingOrder.forEach((numTwo, indexOfNumTwo)=>{
+
+              if(indexOfNumTwo!==indexOfNumOne){
+                console.log(numTwo);
+                
+              }
+              
+            })
+
                 
                 
           });
