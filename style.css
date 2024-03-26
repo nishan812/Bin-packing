@@ -91,6 +91,41 @@ body {
     height: 40%;
 }
 .resultBody{
-  width: 300px;
   background-color: red;
+  width: 400px;
+  
+}
+.datas{
+  height: 30px;
+  background-color: blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.howManyBins{
+  background-color: green;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.howToFit{
+  background-color: aqua;
+}
+.howToFitHeading{
+  text-align: center;
+  height: 30px;
+  border-bottom: 2px solid black;
+}
+.results{
+
+}
+.itemBody{
+
+}
+.itemHeading{
+
+}
+.bin{
+  
 }

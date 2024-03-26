@@ -156,10 +156,10 @@ continueButton_1.addEventListener("click", () => {
           }
           continueButton_2.remove();
 
-          //final part
-          const resultBody = document.createElement("div");
-          resultBody.classList.add("resultBody");
-          root.appendChild(resultBody);
+
+          /**
+           * Main algorithm is here... took me 3days to implement this algorithm
+           */
 
           // Full bin packing algorithm
           const bins = [];
@@ -190,6 +190,60 @@ continueButton_1.addEventListener("click", () => {
           
 
           // now from here we'll display how to fit? ||   DISPLAYING SOLUTIONS
+
+          
+          //final part
+          const resultBody = document.createElement("div");
+          resultBody.classList.add("resultBody");
+          root.appendChild(resultBody);
+
+          const datas = document.createElement('div')
+          datas.classList.add('datas');
+          datas.textContent=`Lower Bound = ${lowerBound} Capacity = ${capacity}`
+          resultBody.appendChild(datas);
+
+
+          const howManyBins=document.createElement('div');
+          howManyBins.classList.add("howManyBins");
+          howManyBins.innerHTML=`<p>You need ${bins.length} bins</p>`
+          resultBody.appendChild(howManyBins)
+
+          const howToFit=document.createElement("div");
+          howToFit.classList.add("howToFit");
+          resultBody.appendChild(howToFit)
+
+          const howToFitHeading=document.createElement("div");
+          howToFitHeading.innerHTML=`<h3>You need to fit as shown below:</h3>`
+          howToFitHeading.classList.add("howToFitHeading")
+          howToFit.appendChild(howToFitHeading)
+
+
+          const results = document.createElement("div");
+          results.classList.add("results");
+          howToFit.appendChild(results);
+
+          bins.forEach((item,i)=>{
+        
+            let itemBody = document.createElement("span");
+            itemBody.classList.add("itemBody");
+            results.appendChild(itemBody)
+
+            let itemHeading = document.createElement("p");
+            itemHeading.classList.add("itemHeading");
+            itemHeading.textContent=`Bin ${i+1}`
+            itemBody.appendChild(itemHeading)
+
+            //
+
+            let bin = document.createElement("span");
+            bin.classList.add("bin")
+            bin.textContent=item
+            itemBody.appendChild(bin)
+          })
+
+
+
+          
 
 
 
