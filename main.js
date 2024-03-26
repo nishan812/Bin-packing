@@ -35,7 +35,7 @@ root.appendChild(capacityBody);
 
 const capacityHeading = document.createElement("p");
 capacityHeading.classList.add("capacityHeading");
-capacityHeading.textContent = "Enter capacity";
+capacityHeading.textContent = "Enter capacity of a Bin";
 capacityBody.appendChild(capacityHeading);
 
 const capacityInput = document.createElement("input");
@@ -205,7 +205,7 @@ continueButton_1.addEventListener("click", () => {
 
           const howManyBins=document.createElement('div');
           howManyBins.classList.add("howManyBins");
-          howManyBins.innerHTML=`<p>You need ${bins.length} bins</p>`
+          howManyBins.innerHTML=`<p>You need ${bins.length} Bins</p>`
           resultBody.appendChild(howManyBins)
 
           const howToFit=document.createElement("div");
