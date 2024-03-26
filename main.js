@@ -158,26 +158,33 @@ continueButton_1.addEventListener("click", () => {
           resultBody.classList.add("resultBody");
           root.appendChild(resultBody);
 
-          const bins =[];
-          valuesInDescendingOrder.forEach((numOne,indexOne)=>{
-            valuesInDescendingOrder.forEach((numTwo,indexTwo)=>{
-              if(indexTwo!==indexOne){
-                if(numOne+numTwo<=capacity){
-                  bins.push(numOne,numTwo)
-                  
-                  //fuck off
+          // Full bin packing algorithm
+          const bins = [];
 
-                }
+          // Initializing bins
+          bins.push([]);
+
+          // iterating over each item and packing them into bin
+          valuesInDescendingOrder.forEach((value) => {
+            let packed = false;
+            for (const bin of bins) {
+              // Checking if there's enough capacity in the current bin
+              if (
+                bin.reduce((acc, curr) => acc + curr, 0) + value <=
+                capacity
+              ) {
+                bin.push(value); // packing the item in the current bin
+                packed = true;
+                break;
               }
-
-            });
+            }
+            if (!packed) {
+              // if not fitted then create a new bin
+              bins.push([value]);
+            }
           });
+
           console.log(bins);
-
-
-
-         
-          
         }
       }
     });
