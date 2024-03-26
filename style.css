@@ -67,6 +67,8 @@ input{
 }
 
 .msgLabelBody {
+  padding: 10px;
+  color: black;
   border: 2px solid red;
   height: 30px;
   width: 400px;
