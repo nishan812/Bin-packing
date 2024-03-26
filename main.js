@@ -94,7 +94,10 @@ continueButton_1.addEventListener("click", () => {
       groupInput.setAttribute("type", "number");
       groupBody.appendChild(groupInput);
     }
-
+    if(body.children[0].classList=="msgLabelBody"){
+      body.children[0].remove()
+    }
+    alertMessage("Weight should not be more than capacity")
     // here goes main
     continueButton_2.addEventListener("click", () => {
       const groupInputs = document.querySelectorAll(".groupInput");
@@ -183,8 +186,13 @@ continueButton_1.addEventListener("click", () => {
               bins.push([value]);
             }
           });
-
           console.log(bins);
+          
+
+          // now from here we'll display how to fit? ||   DISPLAYING SOLUTIONS
+
+
+
         }
       }
     });

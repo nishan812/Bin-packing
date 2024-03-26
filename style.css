@@ -60,7 +60,7 @@ body {
 .msgLabelBody {
   border: 2px solid red;
   height: 30px;
-  width: 350px;
+  width: 400px;
   margin-top: 10%;
   display: flex;
   justify-content: center;
