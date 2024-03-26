@@ -45,7 +45,7 @@ capacityBody.appendChild(capacityInput);
 
 const continueButton_1 = document.createElement("button");
 continueButton_1.classList.add("continueButton_1");
-continueButton_1.textContent = "continue";
+continueButton_1.innerHTML = `<span>Continue</span>`;
 body.appendChild(continueButton_1);
 
 let numberOfGroups;
@@ -76,7 +76,7 @@ continueButton_1.addEventListener("click", () => {
     console.log(`capacity = ${capacity}`);
 
     const continueButton_2 = document.createElement("button");
-    continueButton_2.textContent = "Calculate";
+    continueButton_2.innerHTML = `<span>Calculate</span>`;
     continueButton_2.classList.add("continueButton_2");
     body.appendChild(continueButton_2);
 
