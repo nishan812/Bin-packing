@@ -199,7 +199,7 @@ continueButton_1.addEventListener("click", () => {
 
           const datas = document.createElement('div')
           datas.classList.add('datas');
-          datas.textContent=`Lower Bound = ${lowerBound} Capacity = ${capacity}`
+          datas.textContent=`Lower Bound = ${lowerBound},    Capacity = ${capacity}`
           resultBody.appendChild(datas);
 
 
@@ -230,7 +230,7 @@ continueButton_1.addEventListener("click", () => {
 
             let itemHeading = document.createElement("p");
             itemHeading.classList.add("itemHeading");
-            itemHeading.textContent=`Bin ${i+1}`
+            itemHeading.innerHTML=`<p>Bin ${i+1}</p>`
             itemBody.appendChild(itemHeading)
 
             //
